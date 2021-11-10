@@ -1,0 +1,7 @@
+{
+    "extends": "@zardoy/tsconfig",
+    "compilerOptions": {
+        "noUncheckedIndexedAccess": false
+    },
+    "include": ["matrix.ts", "neuralNetwork.ts", "XOR.ts"]
+}
