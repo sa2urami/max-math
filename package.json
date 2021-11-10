@@ -5,7 +5,8 @@
     "scripts": {
         "start": "esbuild --bundle --watch --outfile=index.js --format=iife --platform=browser --global-name=windowCopy index.ts",
         "test": "jest --testPathPattern *.test.js",
-        "browser": "vite"
+        "browser": "vite",
+        "network-example": "tsm Examples/digitRecognizer/DigitRecognizer.ts"
     },
     "dependencies": {
         "@types/get-pixels": "^3.3.1",
@@ -25,5 +26,8 @@
     },
     "jest": {
         "preset": "ts-jest"
+    },
+    "devDependencies": {
+        "tsm": "^2.1.4"
     }
 }
