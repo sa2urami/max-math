@@ -3,3 +3,4 @@ node_modules
 Examples/digitRecognizer/train
 .DS_Store
 *.js
+!snowpack.config.js

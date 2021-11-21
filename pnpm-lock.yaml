@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@babel/core': ^7.16.0
   '@types/get-pixels': ^3.3.1
   '@types/jest': ^27.0.2
   '@types/lodash': ^4.14.176
@@ -14,10 +15,10 @@ specifiers:
   ts-jest: ^27.0.7
   tsm: ^2.1.4
   typescript: ^4.4.4
-  vite: ^2.6.14
   ws: ^8.2.3
 
 dependencies:
+  '@babel/core': 7.16.0
   '@types/get-pixels': 3.3.1
   '@types/jest': 27.0.2
   '@types/lodash': 4.14.176
@@ -28,9 +29,8 @@ dependencies:
   get-pixels: 3.3.3
   jest: 27.3.1
   lodash: 4.17.21
-  ts-jest: 27.0.7_2c4ca6574207836d1023f54689cc81ac
+  ts-jest: 27.0.7_64b3e2d9790b45ff46b15c2c39e45934
   typescript: 4.4.4
-  vite: 2.6.14
   ws: 8.2.3
 
 devDependencies:
@@ -3107,12 +3107,6 @@ packages:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
     dev: false
 
-  /nanoid/3.1.30:
-    resolution: {integrity: sha512-zJpuPDwOv8D2zq2WRoMe1HsfZthVewpel9CAvTfc/2mBD1uUT/agc5f7GHGWXlYkFvi1mVxe4IjvP2HNrop7nQ==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-    dev: false
-
   /nanomatch/1.2.13:
     resolution: {integrity: sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA==}
     engines: {node: '>=0.10.0'}
@@ -3371,15 +3365,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /postcss/8.3.11:
-    resolution: {integrity: sha512-hCmlUAIlUiav8Xdqw3Io4LcpA1DOt7h3LSTAC4G6JGHFFaWzI6qvFt9oilvl8BmkbBRX1IhM90ZAmpk68zccQA==}
-    engines: {node: ^10 || ^12 || >=14}
-    dependencies:
-      nanoid: 3.1.30
-      picocolors: 1.0.0
-      source-map-js: 0.6.2
-    dev: false
-
   /prelude-ls/1.1.2:
     resolution: {integrity: sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=}
     engines: {node: '>= 0.8.0'}
@@ -3523,14 +3508,6 @@ packages:
       glob: 7.2.0
     dev: false
 
-  /rollup/2.59.0:
-    resolution: {integrity: sha512-l7s90JQhCQ6JyZjKgo7Lq1dKh2RxatOM+Jr6a9F7WbS9WgKbocyUSeLmZl8evAse7y96Ae98L2k1cBOwWD8nHw==}
-    engines: {node: '>=10.0.0'}
-    hasBin: true
-    optionalDependencies:
-      fsevents: 2.3.2
-    dev: false
-
   /rsvp/4.8.5:
     resolution: {integrity: sha512-nfMOlASu9OnRJo1mbEk2cz0D56a1MBNrJ7orjRZQG10XDyuvwksKbuXNp6qa+kbn839HwjwhBzhFmdsaEAfauA==}
     engines: {node: 6.* || >= 7.*}
@@ -3667,11 +3644,6 @@ packages:
       source-map: 0.5.7
       source-map-resolve: 0.5.3
       use: 3.1.1
-    dev: false
-
-  /source-map-js/0.6.2:
-    resolution: {integrity: sha512-/3GptzWzu0+0MBQFrDKzw/DvvMTUORvgY6k6jd/VS6iCR4RDTKWH6v6WPwQoUO8667uQEf9Oe38DxAYWY5F/Ug==}
-    engines: {node: '>=0.10.0'}
     dev: false
 
   /source-map-resolve/0.5.3:
@@ -3914,7 +3886,7 @@ packages:
       punycode: 2.1.1
     dev: false
 
-  /ts-jest/27.0.7_2c4ca6574207836d1023f54689cc81ac:
+  /ts-jest/27.0.7_64b3e2d9790b45ff46b15c2c39e45934:
     resolution: {integrity: sha512-O41shibMqzdafpuP+CkrOL7ykbmLh+FqQrXEmV9CydQ5JBk0Sj0uAEF5TNNe94fZWKm3yYvWa/IbyV4Yg1zK2Q==}
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
@@ -3932,6 +3904,7 @@ packages:
       babel-jest:
         optional: true
     dependencies:
+      '@babel/core': 7.16.0
       '@types/jest': 27.0.2
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
@@ -4057,30 +4030,6 @@ packages:
       assert-plus: 1.0.0
       core-util-is: 1.0.2
       extsprintf: 1.3.0
-    dev: false
-
-  /vite/2.6.14:
-    resolution: {integrity: sha512-2HA9xGyi+EhY2MXo0+A2dRsqsAG3eFNEVIo12olkWhOmc8LfiM+eMdrXf+Ruje9gdXgvSqjLI9freec1RUM5EA==}
-    engines: {node: '>=12.2.0'}
-    hasBin: true
-    peerDependencies:
-      less: '*'
-      sass: '*'
-      stylus: '*'
-    peerDependenciesMeta:
-      less:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-    dependencies:
-      esbuild: 0.13.13
-      postcss: 8.3.11
-      resolve: 1.20.0
-      rollup: 2.59.0
-    optionalDependencies:
-      fsevents: 2.3.2
     dev: false
 
   /w3c-hr-time/1.0.2:

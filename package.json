@@ -5,10 +5,11 @@
     "scripts": {
         "start": "esbuild --bundle --watch --outfile=index.js --format=iife --platform=browser --global-name=windowCopy index.ts",
         "test": "jest --testPathPattern *.test.js",
-        "browser": "vite",
+        "browser": "esbuild ./Examples/digitRecognizer/browser.ts --platform=browser --watch --bundle --outfile=browser.js",
         "network-example": "tsm Examples/digitRecognizer/DigitRecognizer.ts"
     },
     "dependencies": {
+        "@babel/core": "^7.16.0",
         "@types/get-pixels": "^3.3.1",
         "@types/jest": "^27.0.2",
         "@types/lodash": "^4.14.176",
@@ -21,7 +22,6 @@
         "lodash": "^4.17.21",
         "ts-jest": "^27.0.7",
         "typescript": "^4.4.4",
-        "vite": "^2.6.14",
         "ws": "^8.2.3"
     },
     "jest": {

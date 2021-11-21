@@ -1,4 +1,4 @@
-import { times } from 'lodash'
+import _ from 'lodash'
 import { argmax } from '../../utilities'
 
 const canvas = document.querySelector('canvas')!
@@ -19,9 +19,9 @@ window.grid = grid
 let outputValues = [] as number[]
 
 const resetGrid = () => {
-    times(28, x => {
+    _.times(28, (x) => {
         grid[x] = []
-        times(28, y => {
+        _.times(28, (y) => {
             grid[x][y] = 0
         })
     })
@@ -47,11 +47,11 @@ socket.onclose = () => {
 
 const drawGrid = () => {
     ctx.fillStyle = connected ? 'black' : 'red'
-    times(count, y => {
+    _.times(count, (y) => {
         ctx.fillRect(0, y * mult, canvas.width - 200, 2)
     })
 
-    times(count, x => {
+    _.times(count, (x) => {
         ctx.fillRect(x * mult, 0, 2, canvas.height)
     })
 }
@@ -74,9 +74,23 @@ const redraw = () => {
         ctx.fillStyle = yMax === y ? 'red' : 'black'
         ctx.fillText(String(y), xColumns, y * lineHeight + 35)
         ctx.font = '12px monospace'
-        ctx.fillText((outputValues[y] * 100).toFixed(3) + "%", xColumns + 100, y * lineHeight + 40)
-        ctx.fillStyle = outputValues[y] < 0.2 ? 'green' : outputValues[y] < 0.6 ? 'yellow' : 'red'
-        ctx.fillRect(xColumns + 50, y * lineHeight, outputValues[y] * 50, lineHeight - 15)
+        ctx.fillText(
+            (outputValues[y] * 100).toFixed(3) + '%',
+            xColumns + 100,
+            y * lineHeight,
+        )
+        ctx.fillStyle =
+            outputValues[y] < 0.2
+                ? 'green'
+                : outputValues[y] < 0.6
+                ? 'yellow'
+                : 'red'
+        ctx.fillRect(
+            xColumns + 50,
+            y * lineHeight,
+            outputValues[y] * 50,
+            lineHeight - 15,
+        )
     }
 }
 redraw()
@@ -96,19 +110,19 @@ canvas.onpointermove = ({ clientX, clientY }) => {
     grid[y][x] = Math.min(grid[y][x] + intens, 1)
     gridChanged()
 }
-
+//@ts-ignore
 window.testOne = () => {
     socket.send('true')
 }
 
-canvas.oncontextmenu = e => {
+canvas.oncontextmenu = (e) => {
     grid = []
     resetGrid()
     gridChanged()
     e.preventDefault()
 }
 
-const render = values => {
+const render = (values) => {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     const lineHeight = 48

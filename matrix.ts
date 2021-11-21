@@ -117,10 +117,11 @@ export class Matrix {
         }
         return result
     }
-    map(func: (arg0: any) => any) {
+    map(func: (arg0: any, arg1: any) => any) {
+        let buf = this.toArray()
         for (let i = 0; i < this.rows; i++) {
             for (let j = 0; j < this.cols; j++)
-                this.data[i][j] = func(this.data[i][j])
+                this.data[i][j] = func(this.data[i][j], buf)
         }
     }
     clone() {
@@ -131,8 +132,7 @@ export class Matrix {
     toArray() {
         const buf: number[] = []
         if (this.cols == 1) {
-            for (let i = 0; i < this.rows; i++)
-                buf[i] = this.data[i][0]
+            for (let i = 0; i < this.rows; i++) buf[i] = this.data[i][0]
         }
         return buf
     }
